@@ -1,0 +1,100 @@
+{
+  "students": [
+    {
+      "student-id": "202100001",
+      "first-name": "john jayson",
+      "middle-name": "bartolay",
+      "last-name": "de leon",
+      "address": "35 blk 5 purok uno bayanan,muntilupa city",
+      "country": "philippines",
+      "current-level": "senior high",
+      "enrolled": true,
+      "guardians": [
+        {
+          "name": "jose jorge de leon",
+          "contact-no": "12345678",
+          "role": "father"
+        },
+        {
+          "name": "jose jorge de leon",
+          "contact-no": "12345678",
+          "role":"mother"
+        }
+      ],
+      "teachers": {
+        "senior-high": [
+          {
+            "subject":"math",
+            "teacher-id": "202100001",
+            "name": "joe joe 1"
+          },
+          {
+            "subject":"english",
+            "teacher-id": "202100002",
+            "name": "joe joe 2"
+          },
+          {
+            "subject":"science",
+            "teacher-id": "202100003",
+            "name": "joe joe 3"
+          },
+          {
+            "subject":"history",
+            "teacher-id": "202100004",
+            "name": "joe joe 4"
+          },
+          {
+            "subject":"physical-education",
+            "teacher-id": "202100005",
+            "name": "joe joe 5"
+          },
+          {
+            "subject":"music",
+            "teacher-id": "202100006",
+            "name": "joe joe 6"
+          },
+          {
+            "subject":"art",
+            "teacher-id": "202100007",
+            "name": "joe joe 7"
+          },
+          {
+            "subject":"native-language",
+            "teacher-id": "202100008",
+            "name": "joe joe 8"
+          }
+        ]
+      },
+      "grades": {
+        "senior-high": [
+          {
+            "set-test":"first-quarter",
+            "prelim": [
+              {"subject":"math","score":70},
+              {"subject":"english","score": 80},
+              {"subject":"science","score": 90},
+              {"subject":"history","score": 78},
+              {"subject":"physical-education","score": 90},
+              {"subject":"music","score": 80},
+              {"subject":"art","score": 90},
+              {"subject":"native-language","score": 100}
+              ]
+          },
+          {
+            "set-test":"last-quarter",
+            "prelim": [
+              {"subject":"math","score":70},
+              {"subject":"english","score": 80},
+              {"subject":"science","score": 90},
+              {"subject":"history","score": 78},
+              {"subject":"physical-education","score": 90},
+              {"subject":"music","score": 80},
+              {"subject":"art","score": 90},
+              {"subject":"native-language","score": 100}
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
