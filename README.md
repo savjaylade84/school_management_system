@@ -37,5 +37,5 @@
 3. add log config file using yaml for flexible log configuration
 
 ``` want to hire me? email me @ savjaylade84@gmail.com <br/>```
-``` check out my portforlio @ https://savjaylade84.github.io/Jisun.github.io/  <br/>```
+``` check out my portfolio @ https://savjaylade84.github.io/Jisun.github.io/  <br/>```
 ``` see some issue in my repository just hit the problem button ```
