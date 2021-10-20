@@ -1,5 +1,11 @@
 from log import module_log
 
+''' 
+        this module has grade class that will contain
+        all the grade information that related to the 
+        student information.
+'''
+
 class grade:
 
     def __init__(self):

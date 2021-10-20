@@ -45,22 +45,22 @@ class teacher:
     # initialise a teacher inforamtion in the teacher object
     def define(value: dict) -> None:
         if is_none(value): raise NoneError from Error
-        self._logger.log.info(message = f'function define <- {dict}')
+        self._logger.log.info(message = f'function define <- {value}')
         self._subject,self._id,self._name = data
 
     # add a teacher in the teacher list
-    def add_teacher(self,teacher: dict) -> None:
-        if is_none(teacher): raise NoneError from Error
-        self._logger.log.info(message = f'function add_teachers <- {teacher}')
-        self._teachers.append(teacher)
-        self._logger.log.info(message = f'function add_teachers : {self._teacher} <- {teacher}')
+    def add_teacher(self,value: dict) -> None:
+        if is_none(value): raise NoneError from Error
+        self._logger.log.info(message = f'function add_teachers <- {value}')
+        self._teachers.append(value)
+        self._logger.log.info(message = f'function add_teachers : {self._teacher} <- {value}')
 
     # remove a teacher in the teacher list
-    def remove_teacher(self,teacher: dict) -> None:
-        if is_none(teacher): raise NoneError from Error
-        self._logger.log.info(message = f'function remove_teachers <- {teacher}')
-        self._teachers.remove(teacher)
-        self._logger.log.info(message = f'function remove_teachers{self._teacher} -> {teachers}')
+    def remove_teacher(self,value: dict) -> None:
+        if is_none(value): raise NoneError from Error
+        self._logger.log.info(message = f'function remove_teachers <- {value}')
+        self._teachers.remove(value)
+        self._logger.log.info(message = f'function remove_teachers : {self._teacher} -> {value}')
 
     ''' 
         this will show object information

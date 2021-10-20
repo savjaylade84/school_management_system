@@ -31,7 +31,7 @@ class student_manager:
         if is_none(id): raise NoneError from Error
         for student in self._student_json['students']:
             if(student['student-id'] == id):
-                self._student.credential(value = {
+                self._student.define(value = {
                                 'student-id':student['student-id'],
                                 'first-name':student['first-name'],
                                 'middle-name':student['middle-name'],
@@ -93,27 +93,27 @@ class student_manager:
     # add student in the list
     def add_student(self,student: student) -> None:
         if is_none(student): raise NoneError from Error
-        self._student.students.add_student(student.full_data)
+        self._student.students.add_student(value student.full_data)
 
     # add teacher in the list
     def add_teacher(self,teacher: teacher) -> None:
         if is_none(teacher): raise NoneError from Error
-        self._student.teacher.add_teacher(teacher.full_data)
+        self._student.teacher.add_teacher(value = teacher.full_data)
 
     # add guardian in the list
     def add_guardian(self,guardian: guardian) -> None:
         if is_none(guardian): raise NoneError from Error
-        self._student.guardian.add_guardian(guardian.full_data)
+        self._student.guardian.add_guardian(value = guardian.full_data)
 
     # add grade in the list
     def add_grade(self,grade: grade) -> None:
         if is_none(grade): raise NoneError from Error
-        self._student.set_test.add_grade(grade.full_data)
+        self._student.set_test.add_grade(value = grade.full_data)
 
     # add set test in the list
     def add_set_test(self,test: test) -> None:
         if is_none(grade): raise NoneError from Error
-        self._student.set_test.add_set_test(test.full_data)
+        self._student.set_test.add_set_test(value = test.full_data)
 
     # update student
     def update_student(self,data: student,id: str) -> None:
@@ -136,7 +136,6 @@ class student_manager:
             if(guardian.name == name and guardian.role == role):
                 guardian = data.full_data
 
-    #remove 
 
 
     # save the data in the json file

@@ -1,6 +1,13 @@
 import Tools
 from log import module_log
 
+
+''' 
+        this module has guardian class that will contain
+        all the guardian information that related to the 
+        student information.
+'''
+
 class guardian:
 
     def __init__(self):
@@ -44,13 +51,13 @@ class guardian:
         if is_none(guardian): raise NoneError from Error
         self._logger.log.info(message = f'function add_guardians <- {guardian}')
         self._guardians.append(guardian)
-        self._logger.log.info(message = f'function add_guardians:{self._guardians} <- {guardian}')
+        self._logger.log.info(message = f'function add_guardians : {self._guardians} <- {guardian}')
 
     def remove_guardian(self,guardian: dict) -> None:
         if is_none(guardian): raise NoneError from Error
         self._logger.log.info(message = f'function remove_guardians <- {guardian}')
         self._guardians.remove(guardian)
-        self._logger.log.info(message = f'function remove_guardians:{self._guardians} -> {guardian}')
+        self._logger.log.info(message = f'function remove_guardians : {self._guardians} -> {guardian}')
 
     def __rpr__(self):
         return f'guardian[name = {self._name},role = {self._role},contact = {self._contact}]'
