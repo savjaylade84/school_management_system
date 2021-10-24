@@ -31,6 +31,11 @@ class test:
     def grades(self) -> list:
         self._logger.log.info(f'function grades -> {self._grades}')
         return self._grades
+
+    @property
+    def set_tests(self) -> list:
+        self._logger.log.info(f'function grades -> {self._set_tests}')
+        return self._set_tests
     
     @property
     def full_data(self) -> dict:

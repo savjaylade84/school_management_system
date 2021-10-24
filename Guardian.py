@@ -7,15 +7,13 @@ from log import module_log
         all the guardian information that related to the 
         student information.
 '''
-
+@dataclass
 class guardian:
 
-    def __init__(self):
-        self._name:str = None
-        self._role:str = None
-        self._contact:str = None
-        self._guardians:list = list()
-        self._logger = module_log(log_name = 'guardian.log',disable_log = False)
+    def __init__(self,args*):
+        self._name:str, self._role:str, self._contact:str = args
+        self.data:dict = {'name':self._name:str, 'contact-no':self._contact:str, 'role':self._role:str}
+        self._logger:module_log = module_log(log_name = 'guardian.log',disable_log = False)
 
     @property
     def name(self) -> str:
@@ -38,26 +36,15 @@ class guardian:
         return self._guardians
 
     @property
-    def full_data(self) -> dict:
-        self._logger.log.info(message = 'function full_data -> {0}'.format({'name':self._name,'contact-no':self._contact,'role':self._role}))
-        return {'name':self._name,'contact-no':self._contact,'role':self._role}
+    def data(self) -> dict:
+        self._logger.log.info(message = f'property - data -> {self._data}')
+        return self._data
 
-    def define(value: dict) -> None:
-        if is_none(value): raise NoneError from Error
-        self._logger.log.info(message = f'function define <- {value}')
-        self._name,self._contact,self._role = value
-
-    def add_guardian(self,guardian: dict) -> None:
-        if is_none(guardian): raise NoneError from Error
-        self._logger.log.info(message = f'function add_guardians <- {guardian}')
-        self._guardians.append(guardian)
-        self._logger.log.info(message = f'function add_guardians : {self._guardians} <- {guardian}')
-
-    def remove_guardian(self,guardian: dict) -> None:
-        if is_none(guardian): raise NoneError from Error
-        self._logger.log.info(message = f'function remove_guardians <- {guardian}')
-        self._guardians.remove(guardian)
-        self._logger.log.info(message = f'function remove_guardians : {self._guardians} -> {guardian}')
+    @property.setter
+    def data(self,value: guardian) -> None:
+        if is_none(value): raise NoneError(f'Guardian.py : property.setter - data')
+        self._name,self._contact,self._role = value.data
+        self._data = value.data
 
     def __rpr__(self):
         return f'guardian[name = {self._name},role = {self._role},contact = {self._contact}]'

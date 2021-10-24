@@ -1,5 +1,6 @@
 import Tools
 from log import module_log
+from dataclasses import dataclass
 
 ''' 
         this module has teacher class that will contain
@@ -7,14 +8,13 @@ from log import module_log
         student information.
 '''
 
+@dataclass
 class teacher:
 
-    def __init__(self):
-        self._id:str = None
-        self._name:str = None
-        self._subject:str = None
-        self._teachers:list = list()
-        self._logger = module_log(log_name = 'teacher.log',disable_log = False)
+    def __init__(self,args*):
+        self._id:str, self._name:str, self._subject:str = args
+        self._data:dict = {'subject':self._subject, 'teacher-id':self._id,'name':self._name}
+        self._logger:module_log = module_log(log_name = 'teacher.log',disable_log = False)
 
     @property
     def id(self) -> str:
@@ -32,35 +32,15 @@ class teacher:
         return self._subject
 
     @property
-    def teachers(self) -> list:
-        self._logger.log.info(message = f'function teachers -> {self._teachers}')
-        return self._teachers
+    def data(self) -> dict:
+        self._logger.log.info(message = f'property - data -> {self.data}')
+        return self._data
 
-    # this will send a teacher information in a dictionary format
-    @property
-    def full_data(self) -> dict:
-        self._logger.log.info(message = 'function full_data -> %s'.format({'subject':self._subject, 'teacher-id':self._id,'name':self._name}))
-        return {'subject':self._subject, 'teacher-id':self._id,'name':self._name}
-
-    # initialise a teacher inforamtion in the teacher object
-    def define(value: dict) -> None:
-        if is_none(value): raise NoneError from Error
-        self._logger.log.info(message = f'function define <- {value}')
-        self._subject,self._id,self._name = data
-
-    # add a teacher in the teacher list
-    def add_teacher(self,value: dict) -> None:
-        if is_none(value): raise NoneError from Error
-        self._logger.log.info(message = f'function add_teachers <- {value}')
-        self._teachers.append(value)
-        self._logger.log.info(message = f'function add_teachers : {self._teacher} <- {value}')
-
-    # remove a teacher in the teacher list
-    def remove_teacher(self,value: dict) -> None:
-        if is_none(value): raise NoneError from Error
-        self._logger.log.info(message = f'function remove_teachers <- {value}')
-        self._teachers.remove(value)
-        self._logger.log.info(message = f'function remove_teachers : {self._teacher} -> {value}')
+    @property.setter
+    def data(self,value: teacher) -> None:
+        if is_none(teacher): raise NoneError(f'Teacher.py : property.setter - data')
+        self._id:str, self._name:str, self._subject:str = value.data   
+        self._data = value.data 
 
     ''' 
         this will show object information

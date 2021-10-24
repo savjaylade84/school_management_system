@@ -1,4 +1,5 @@
-testing = [{"num1":1},{"num2":2},{"num3":3},{"num4":4}]
-print(testing)
-testing.remove({"num1":1})
-print(testing)
+from Error import NoneError
+
+testing = [{'one':1},{'two':2},{'three':3}]
+
+print(testing[{'two':2}])
