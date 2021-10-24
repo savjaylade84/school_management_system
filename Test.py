@@ -1,6 +1,7 @@
-import Tools
-from Grade import grade
-from log import module_logs
+import Error
+from log import module_log
+from dataclasses import dataclass
+from Tools import is_none
 
 ''' 
         this module has test class that will contain
@@ -8,72 +9,49 @@ from log import module_logs
         student information.
 '''
 
+@dataclass
 class test:
 
-    def __init__(self):
-        self._set_name:str = None
-        self._set_tests:list = list()
-        self._grades:list = list()
-        self._grades_name:str = None
-        self._logger = module_log(log_name = 'test.log',disable_log = False)
+    def __init__(self,*args):
+        # create the log 
+        self._logger:module_log = module_log(log_name = 'test.log',disable_log = False)
+        # log the creation
+        self._logger.log.debug(f'__init__ <- {args}')
+        self._subject_code:str
+        self._subject:str
+        self._score:str
+        self._subject, self._score = args
+        self._data:dict = {'subject-code':self._subject_code,'subject':self._subject, 'score':self._score}
 
     @property
-    def set_name(self) -> str:
-        self._logger.log.info(f'function set_name -> {self._set_name}')
-        return self._set_name
+    def subject_code(self) -> str:
+        self._logger.log.info(f'property.getter - subject -> {self._subject_code}')
+        return self._subject_code
 
     @property
-    def grades_name(self) -> str:
-        self._logger.log.info(f'function grades_name -> {self._grades_name}')
-        return self._grades_name
+    def subject(self) -> str:
+        self._logger.log.info(f'property.getter - subject -> {self._subject}')
+        return self._subject
 
     @property
-    def grades(self) -> list:
-        self._logger.log.info(f'function grades -> {self._grades}')
-        return self._grades
+    def score(self) -> int:
+        self._logger.log.info(f'property.getter - score -> {self._score}')
+        return self._score
 
     @property
-    def set_tests(self) -> list:
-        self._logger.log.info(f'function grades -> {self._set_tests}')
-        return self._set_tests
-    
-    @property
-    def full_data(self) -> dict:
-        self._logger.log.info('function full_data -> {0}'.format({'set-test':self._set_name,self._grades_name:self._grades}))
-        return {'set-test':self._set_name,self._grades_name:self._grades}
+    def data(self) -> dict:
+        self._logger.log.info(f'property.getter - data -> {self._data}')
+        return self._data
 
-    def add_grade(self,value: grade) -> None:
-        if is_none(value): raise NoneError from Error
-        self._logger.log.info(f'function add_grade <- {value}')
-        self._grades.append(value.full_data)
-
-    def add_set_test(self,value: dict) -> None:
-        if is_none(test):raise NoneError from Error
-        self._logger.log.info(f'function add_set_test <- {test}')
-        self._set_tests.append(test)
-
-    def define(self,set_name: str,grades: list) -> None:
-        if is_none(set_name,grades):raise NoneError from Error
-        self._logger.log.info(f'function define <- {set_name}:{grades}')
-        self._set_name = set_name
-        self._grades = grades
-
-    def remove_grade(self,value: dict) -> None:
-        if is_none(value):raise NoneError from Error
-        self._logger.log.info(f'function remove_grade <- {value}')
-        self._grades.remove(value)
-        self._logger.log.info(f'function remove_grade:{self._grades} -> {value}')
-
-    def remove_set_test(self,value: dict) -> None:
-        if is_none(value):raise NoneError from Error
-        self._logger.log.info(f'function remove_set_test <- {value}')
-        self._grades.remove(value)
-        self._logger.log.info.(f'function remove_set_test : {self._set_tests} -> {value}')
+    @data.setter
+    def data(self,value: dict) -> None:
+        if is_none(value): raise NoneError(f'test.py : property.setter - data')
+        self._subject, self._score = value
+        self._data = value
 
     def __rpr__(self):
-        return f'test[set_test = {self._set_name},grades = {self._grades}]'
+        return f'test[{self.data}]'
 
     def __str__(self):
-        return f'test[set_test = {self._set_name},grades = {self._grades}]'
+        return f'test[{self.data}]'
 
-       

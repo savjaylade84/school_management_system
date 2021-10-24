@@ -1,5 +1,14 @@
-from Error import NoneError
+from Teacher import teacher
 
-testing = [{'one':1},{'two':2},{'three':3}]
+t = teacher('0999','sara dutch','math')
+print(t.data)
 
-print(testing[{'two':2}])
+from Guardian import guardian
+
+g = guardian('john','009','brother')
+
+print(g.data)
+
+from Tools import is_none
+if is_none(None):
+    print('hello')

@@ -6,7 +6,7 @@ class Error(Exception):
     pass
 
 class InputError(Error):
-    def __init__(self,message,input*):
+    def __init__(self,message,*input):
         self.message = f'{message} -> [ Input Value ] : [ {input} ]'
         logger.log.warning(f'InputError:{self._message}')
 

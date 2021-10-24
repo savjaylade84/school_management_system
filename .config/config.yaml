@@ -33,17 +33,17 @@ handlers:
       formatter: data
       mode: a
       encoding: utf-8
-    grade.file:
-      class: logging.FileHandler
-      level: DEBUG
-      filename: .logs/grade/grade.log
-      formatter: data
-      mode: a
-      encoding: utf-8
     test.file:
       class: logging.FileHandler
       level: DEBUG
       filename: .logs/test/test.log
+      formatter: data
+      mode: a
+      encoding: utf-8
+    set.file:
+      class: logging.FileHandler
+      level: DEBUG
+      filename: .logs/set/set.log
       formatter: data
       mode: a
       encoding: utf-8
@@ -88,13 +88,13 @@ loggers:
     level: DEBUG
     handlers: [guardian.file]
     propagate: no
-  grade.log:
-    level: DEBUG
-    handlers: [grade.file]
-    propagate: no
   test.log:
     level: DEBUG
     handlers: [test.file]
+    propagate: no
+  set.log:
+    level: DEBUG
+    handlers: [set.file]
     propagate: no
   error.log:
     level: DEBUG
