@@ -45,7 +45,7 @@ class test:
 
     @data.setter
     def data(self,value: dict) -> None:
-        if is_none(value): raise NoneError(f'test.py : property.setter - data')
+        if is_none(value): raise NoneError(f'Test.py : property.setter - data')
         self._subject, self._score = value
         self._data = value
 

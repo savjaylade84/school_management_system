@@ -1,4 +1,5 @@
 {
+
   "students": [
     {
       "student-id": "202100001",
@@ -32,7 +33,7 @@
           ]
         }
       },
-      "grade":[
+      "grades":[
           {
             "title":"Basic Math I",
             "date":"01/01/01",

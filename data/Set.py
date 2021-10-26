@@ -12,7 +12,7 @@ class set:
 
     def __init__(self,*args):
         # create the log 
-        self._logger:module_log = module_log(log_name = 'test.log',disable_log = False)
+        self._logger:module_log = module_log(log_name = 'set.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
         self._title:str = None
@@ -33,23 +33,23 @@ class set:
         return self._set
 
     @property
-    def date(self) -> list:
+    def date(self) -> str:
         self._logger.log.info(f'property.getter - date -> {self._date}')
         return self._date
 
     @property
-    def total_score(self) -> list:
+    def total_score(self) -> int:
         self._logger.log.info(f'property.getter - total_score -> {self._total_score}')
         return self._total_score
 
     @property
-    def full_data(self) -> dict:
+    def data(self) -> dict:
         self._logger.log.info(f'property.getter - full_data -> {self._data}')
         return self._data
 
     @data.setter
     def data(self,value:dict) -> None:
-        if is_none(value): raise NoneError(f'set.py : property.setter - data')
+        if is_none(value): raise NoneError(f'Set.py : property.setter - data')
         self._title,self._date,self._set,self._total_score = value
         self._data = value
 

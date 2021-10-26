@@ -20,8 +20,9 @@ class teacher:
         self._id:str
         self._name:str
         self._subject:str
-        self._id,self._name,self._subject = args
-        self._data:dict = {'subject':self._subject, 'teacher-id':self._id,'name':self._name}
+        self._subject_code:str
+        self._id,self._name,self._subject,self._subject_code = args
+        self._data:dict = {'teacher-id':self._id,'name':self._name,'subject':self._subject,'subject-code':self._subject_code}
 
     @property
     def id(self) -> str:
@@ -39,6 +40,11 @@ class teacher:
         return self._subject
 
     @property
+    def subject_code(self) -> str:
+        self._logger.log.info( f'property.getter - subject_code -> {self._subject_code}')
+        return self._subject_code
+
+    @property
     def data(self) -> dict:
         self._logger.log.info(f'property.getter - data -> {self._data}')
         return self._data
@@ -46,7 +52,7 @@ class teacher:
     @data.setter
     def data(self,value: dict) -> None:
         if is_none(value): raise NoneError(f'Teacher.py : property.setter - data')
-        self._id, self._name, self._subject = value
+        self._id, self._name, self._subject,self._subject_code = value
         self._data = value
 
     def __rpr__(self):
