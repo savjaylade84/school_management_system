@@ -1,6 +1,7 @@
-import Tools
-from Grade import grade
-from log import module_logs
+from data.Error import NoneError
+from logs.log import module_log
+from dataclasses import dataclass
+from Tools import is_none
 
 ''' 
         this module has test class that will contain

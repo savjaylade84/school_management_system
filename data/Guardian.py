@@ -1,5 +1,5 @@
-import Error
-from log import module_log
+from data.Error import NoneError
+from logs.log import module_log
 from dataclasses import dataclass
 from Tools import is_none
 
@@ -16,6 +16,7 @@ class guardian:
         # create the log
         self._logger:module_log = module_log(log_name = 'guardian.log',disable_log = False)
         # log the creation
+        if is_none(args): raise NoneError(f'Guardian.py : function - __init__')
         self._logger.log.debug(f'__init__ <- {args}')
         self._name:str
         self._role:str

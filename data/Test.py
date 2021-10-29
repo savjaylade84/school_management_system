@@ -1,5 +1,5 @@
-import Error
-from log import module_log
+from data.Error import NoneError
+from logs.log import module_log
 from dataclasses import dataclass
 from Tools import is_none
 

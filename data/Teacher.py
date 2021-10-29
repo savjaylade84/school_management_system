@@ -1,5 +1,5 @@
-import Error
-from log import module_log
+from data.Error import NoneError
+from logs.log import module_log
 from dataclasses import dataclass
 from Tools import is_none
 
@@ -17,6 +17,7 @@ class teacher:
         self._logger:module_log = module_log(log_name = 'teacher.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
+        if is_none(args): raise NoneError(f'Teacher.py : function - __init__')
         self._id:str
         self._name:str
         self._subject:str

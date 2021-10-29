@@ -1,0 +1,5 @@
+[ DEBUG ] >>>  log-name [ teacher.log ] : date [ 2021-10-27 03:00:49 ] : module [ Teacher - __init__ - 19 ] : message [ __init__ <- ('0999', 'sara dutch', 'math', None) ]
+[ DEBUG ] >>>  log-name [ teacher.log ] : date [ 2021-10-27 03:01:03 ] : module [ Teacher - __init__ - 19 ] : message [ __init__ <- ('0999', 'sara dutch', 'math', None) ]
+[ DEBUG ] >>>  log-name [ teacher.log ] : date [ 2021-10-27 03:01:05 ] : module [ Teacher - __init__ - 19 ] : message [ __init__ <- ('0999', 'sara dutch', 'math', None) ]
+[ DEBUG ] >>>  log-name [ teacher.log ] : date [ 2021-10-27 03:02:20 ] : module [ Teacher - __init__ - 19 ] : message [ __init__ <- ('0999', 'sara dutch', 'math', None) ]
+[ DEBUG ] >>>  log-name [ teacher.log ] : date [ 2021-10-27 03:02:21 ] : module [ Teacher - __init__ - 19 ] : message [ __init__ <- ('0999', 'sara dutch', 'math', None) ]
