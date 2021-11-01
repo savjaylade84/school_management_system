@@ -1,0 +1,11 @@
+application-name: 'student & teacher management system'
+version: 1.0
+
+ui_link:
+  dashboard: 'ui/Dashboard.ui'
+  splash: 'ui/Splash.ui'
+  student_edit: 'ui/Student_Edit.ui'
+  student_search: 'ui/Student_Search.ui'
+  teacher_edit: 'ui/Teacher_Edit.ui'
+  teacher_search: 'ui/Teacher_Search.ui'
+  

@@ -33,5 +33,8 @@ class module_log:
 
     @property
     def log(self):
-        if self._disable_log: raise NoneError from Error
+        if self._disable_log: raise NoneError(f'log.py : property.getter - data')
         return self._logger
+
+t = module_log(log_name = "error.log",disable_log=False)
+t.log.info('hello')

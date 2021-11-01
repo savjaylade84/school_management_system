@@ -19,3 +19,9 @@ class NoneError(Error):
     def __init__(self,message):
         self._message = f'{message} -> [ None Value ]'
         logger.log.warning(f'NoneError:{self._message}')
+
+
+class DisableError(Error):
+    def __init__(self,message):
+        self._message = f'{message} -> [ Disable ]'
+        logger.log.warning(f'DisableError:{self._message}')
