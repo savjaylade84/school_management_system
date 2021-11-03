@@ -15,77 +15,77 @@ handlers:
     student.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/student/student.log
+      filename: ./student/student.log
       formatter: data
       mode: a
       encoding: utf-8
     guardian.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/guardian/guardian.log
+      filename: ./guardian/guardian.log
       formatter: data
       mode: a
       encoding: utf-8
     teacher.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/teacher/teacher.log
+      filename: ./teacher/teacher.log
       formatter: data
       mode: a
       encoding: utf-8
     test.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/test/test.log
+      filename: ./test/test.log
       formatter: data
       mode: a
       encoding: utf-8
     set.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/set/set.log
+      filename: ./set/set.log
       formatter: data
       mode: a
       encoding: utf-8
     tools.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/tools/tools.log
+      filename: ./tools/tools.log
       formatter: detail
       mode: a
       encoding: utf-8
     error.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/error/error.log
+      filename: ./error/error.log
       formatter: detail
       mode: a
       encoding: utf-8
     student.manager.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/studentManager/studentManager.log
+      filename: ./studentManager/studentManager.log
       formatter: detail
       mode: a
       encoding: utf-8
     transaction.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/transaction/transaction.log
+      filename: ./transaction/transaction.log
       formatter: detail
       mode: a
       encoding: utf-8
     report.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/report/report.log
+      filename: ./report/report.log
       formatter: data
       mode: a
       encoding: utf-8
     grade.file:
       class: logging.FileHandler
       level: DEBUG
-      filename: ./logs/grade/grade.log
+      filename: ./grade/grade.log
       formatter: data
       mode: a  
 loggers:

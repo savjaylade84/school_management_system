@@ -1,9 +1,11 @@
-import Tools
+from utils.Error import NoneError
+from logs.log import module_log
+from dataclasses import dataclass
+from utils.Tools import is_none
 from Guardian import guardian
 from Teacher import teacher
 from Test import test
 from Grade import grade
-from log import module_log
 
 ''' 
         this module has student class that will contain

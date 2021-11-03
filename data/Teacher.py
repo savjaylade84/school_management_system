@@ -1,7 +1,7 @@
-from Error import NoneError
 from logs.log import module_log
 from dataclasses import dataclass
-from Tools import is_none
+from utils.Tools import is_none
+from utils.Error import NoneError
 
 ''' 
         this module has teacher class that will contain
@@ -61,5 +61,6 @@ class teacher:
 
     def __str__(self):
          return f'teachers[list = {self._data}]'
+
 
 

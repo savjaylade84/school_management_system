@@ -1,7 +1,7 @@
-from Error import NoneError
+from utils.Error import NoneError
 from logs.log import module_log
 from dataclasses import dataclass
-from Tools import is_none
+from utils.Tools import is_none
 
 @dataclass
 class report:
