@@ -25,7 +25,7 @@ class module_log:
             get the configuration of the logging in the .config
             directory
         '''
-        with open('.config/log.yaml','r') as file:
+        with open('./logs/.config/log.yaml','r') as file:
             self._yaml = yaml.load(file,Loader=yaml.FullLoader)     # convert the yaml object to json object
         logging.config.dictConfig(self._yaml)                       # load the json object that has log config
         self._logger = logging.getLogger(log_name)                  # get the logger name in the log config

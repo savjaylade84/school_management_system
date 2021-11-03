@@ -1,4 +1,4 @@
-# Student Management System using Python3 (terminal based) <br>
+# Student Management System using Python3 (Python QT Desktop Gui based) <br>
 > Note:
 ``` most the things that i learn in this self-project was in ```
 ``` a offline python documents. i use offline documentation ```
@@ -8,12 +8,17 @@
 2. log file & python logging library
 3. json & python json library (database)
 4. yaml & python yaml library (log configuration)
-5. python fundamental & python OOP 
+5. python fundamental & python OOP
+6. python QT Gui library 
 > primary function
 1. add student information
 2. create student information
 3. delete student information
 4. update student information
+5. add teacher information
+6. create teacher information
+7. delete teacher information
+8. update teacher information
 > sub function
 1. tuition fee function
     1. sum of total tuition
@@ -23,11 +28,7 @@
     1. compute grade
     2. edit grade
     3. update grade
-3. teacher function
-    1. add teacher
-    2. remove teacher
-    3. update teacher
-4. guardian function
+3. guardian function
     1. add guardian
     2. remove guardian
     3. update guardian 

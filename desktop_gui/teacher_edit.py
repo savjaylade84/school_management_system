@@ -1,8 +1,8 @@
-import sys
-from PyQt5.QtWidgets import QApplication,QWidget
+from PyQt5.QtWidgets import QWidget
 from PyQt5 import uic
+from desktop_gui.settings import get_ui_link
 
 class teacher_edit(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi('ui/Teacher_Edit.ui',self)
+        uic.loadUi(get_ui_link('teacher_edit'),self)
