@@ -18,12 +18,27 @@ class teacher:
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
         if is_none(args): raise NoneError(f'Teacher.py : function - __init__')
+
+        #declare object variable and there types    
         self._id:str
-        self._name:str
-        self._subject:str
-        self._subject_code:str
-        self._id,self._name,self._subject,self._subject_code = args
-        self._data:dict = {'teacher-id':self._id,'name':self._name,'subject':self._subject,'subject-code':self._subject_code}
+        self._firt_name:str
+        self._middle_name:str
+        self._last_name:str
+        self._email:str
+        self._contact:str
+        self._address:str
+        self.country:str
+
+        #initialize object variable
+        self._id,self._first_name,self._middle_name,self._last_name,self._email,self._contact,self.address,self.coutry = args
+        self._data:dict = { 'teacher-id':self._id,
+                            'first-name':self._first_name,
+                            'middle-name':self._middle_name,
+                            'last-name':self._last_name,
+                            'email':self._email,
+                            'contact-no':self._contact,
+                            'address':self.address,
+                            'country':self.coutry}
 
     @property
     def id(self) -> str:
@@ -31,19 +46,39 @@ class teacher:
         return self._id
 
     @property
-    def name(self) -> str:
-        self._logger.log.info( f'property.getter - name -> {self._name}')
-        return self._name
+    def first_name(self) -> str:
+        self._logger.log.info( f'property.getter - first_name -> {self._first_name}')
+        return self._first_name
 
     @property
-    def subject(self) -> str:
-        self._logger.log.info( f'property.getter - subject -> {self._subject}')
-        return self._subject
+    def middle_name(self) -> str:
+        self._logger.log.info( f'property.getter - middle_name -> {self._middle_name}')
+        return self._middle_name
 
     @property
-    def subject_code(self) -> str:
-        self._logger.log.info( f'property.getter - subject_code -> {self._subject_code}')
-        return self._subject_code
+    def last_name(self) -> str:
+        self._logger.log.info( f'property.getter - last_name -> {self._last_name}')
+        return self._last_name
+
+    @property
+    def email(self) -> str:
+        self._logger.log.info( f'property.getter - email -> {self._email}')
+        return self._email
+
+    @property
+    def contact_no(self) -> str:
+        self._logger.log.info( f'property.getter - contact_no -> {self._contact_no}')
+        return self._contact_no
+
+    @property
+    def address(self) -> str:
+        self._logger.log.info( f'property.getter - address -> {self._address}')
+        return self._address
+
+    @property
+    def country(self) -> str:
+        self._logger.log.info( f'property.getter - country -> {self._country}')
+        return self._country
 
     @property
     def data(self) -> dict:
@@ -53,14 +88,14 @@ class teacher:
     @data.setter
     def data(self,value: dict) -> None:
         if is_none(value): raise NoneError(f'Teacher.py : property.setter - data')
-        self._id, self._name, self._subject,self._subject_code = value
+        self._id,self._first_name,self._middle_name,self._last_name,self._email,self._contact,self.address,self.coutry = value
         self._data = value
 
     def __rpr__(self):
-        return f'teachers[list = {self._data}]'
+        return f'teacher[ {self._data} ]'
 
     def __str__(self):
-         return f'teachers[list = {self._data}]'
+         return f'teacher[ {self._data} ]'
 
 
 

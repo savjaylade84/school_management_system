@@ -12,10 +12,23 @@ handlers:
       class: logging.StreamHandler
       level: INFO
       formatter: detail
+    common.file:
+      class: logging.FileHandler
+      level: DEBUG
+      filename: ./logs/common/common.log
+      formatter: detail
+      mode: a  
     student.file:
       class: logging.FileHandler
       level: DEBUG
       filename: ./logs/student/student.log
+      formatter: data
+      mode: a
+      encoding: utf-8
+    database.file:
+      class: logging.FileHandler
+      level: DEBUG
+      filename: ./logs/database/database.log
       formatter: data
       mode: a
       encoding: utf-8
@@ -133,6 +146,10 @@ loggers:
     level: DEBUG
     handlers: [console,student.manager.file]
     propagate: no
+  database.log:
+    level: DEBUG
+    handlers: [database.file]
+    propagate: no
 root:
   level: DEBUG
-  handlers: [console,transaction.file]
+  handlers: [console,common.file]

@@ -51,8 +51,8 @@ class guardian:
         self._data = value
 
     def __rpr__(self):
-        return f'guardian[{self._data}]'
+        return f'guardian[ {self._data} ]'
 
     def __str__(self):
-        return f'guardian[{self._data}]'
+        return f'guardian[ {self._data} ]'
 

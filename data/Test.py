@@ -50,8 +50,8 @@ class test:
         self._data = value
 
     def __rpr__(self):
-        return f'test[{self.data}]'
+        return f'test[ {self.data} ]'
 
     def __str__(self):
-        return f'test[{self.data}]'
+        return f'test[ {self.data} ]'
 

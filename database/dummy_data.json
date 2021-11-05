@@ -1,4 +1,5 @@
 {
+
   "students": [
     {
       "student-id": "202100001",
@@ -8,93 +9,112 @@
       "address": "35 blk 5 purok uno bayanan,muntilupa city",
       "country": "philippines",
       "current-level": "senior high",
+      "email":"savjaylade84@gmail.com",
+      "contact-no":"12345678",
       "enrolled": true,
       "guardians": [
         {
           "name": "jose jorge de leon",
           "contact-no": "12345678",
           "role": "father"
-        },
-        {
-          "name": "jose jorge de leon",
-          "contact-no": "12345678",
-          "role":"mother"
         }
       ],
-      "teachers": {
-        "senior-high": [
-          {
-            "subject":"math",
-            "teacher-id": "202100001",
-            "name": "joe joe 1"
-          },
-          {
-            "subject":"english",
-            "teacher-id": "202100002",
-            "name": "joe joe 2"
-          },
-          {
-            "subject":"science",
-            "teacher-id": "202100003",
-            "name": "joe joe 3"
-          },
-          {
-            "subject":"history",
-            "teacher-id": "202100004",
-            "name": "joe joe 4"
-          },
-          {
-            "subject":"physical-education",
-            "teacher-id": "202100005",
-            "name": "joe joe 5"
-          },
-          {
-            "subject":"music",
-            "teacher-id": "202100006",
-            "name": "joe joe 6"
-          },
-          {
-            "subject":"art",
-            "teacher-id": "202100007",
-            "name": "joe joe 7"
-          },
-          {
-            "subject":"native-language",
-            "teacher-id": "202100008",
-            "name": "joe joe 8"
-          }
-        ]
+      "test": {
+        "senior-high": {
+          "first-quarter": [
+            {
+              "title": "prelim",
+              "start-date": "01/01/01",
+              "end-date":"01/01/01",
+              "set": [
+                {"subject-code":"000-001","score":70},
+                {"subject-code":"000-002","score": 80},
+                {"subject-code":"000-003","score": 90}
+                ],
+              "total-score": 80
+            }
+          ]
+        }
       },
-      "grades": {
-        "senior-high": [
+      "grades":[
           {
-            "set-test":"first-quarter",
-            "prelim": [
-              {"subject":"math","score":70},
-              {"subject":"english","score": 80},
-              {"subject":"science","score": 90},
-              {"subject":"history","score": 78},
-              {"subject":"physical-education","score": 90},
-              {"subject":"music","score": 80},
-              {"subject":"art","score": 90},
-              {"subject":"native-language","score": 100}
-              ]
+            "subject-code":"000-001",
+            "teacher-id":"202100001",
+            "date":"01/01/01",
+            "grade":70
           },
           {
-            "set-test":"last-quarter",
-            "prelim": [
-              {"subject":"math","score":70},
-              {"subject":"english","score": 80},
-              {"subject":"science","score": 90},
-              {"subject":"history","score": 78},
-              {"subject":"physical-education","score": 90},
-              {"subject":"music","score": 80},
-              {"subject":"art","score": 90},
-              {"subject":"native-language","score": 100}
-            ]
+            "subject-code":"000-002",
+            "teacher-id":"202100002",
+            "date":"01/01/01",
+            "grade":80
+          },
+          {
+            "subject-code":"000-002",
+            "teacher-id":"202100003",
+            "date":"01/01/01",
+            "grade":90
           }
-        ]
-      }
+      ]
     }
-  ]
+  ],
+  "report":[
+    {
+      "student-id":"202100001",
+      "title": "making joke",
+      "note": "make punish",
+      "date": "01/01/01",
+      "complaint-by": "rose",
+      "status": "case-closed"
+    }
+  ],
+  "subject":[
+    {
+      "subject-code":"000-001",
+      "subject":"Basic Math I",
+      "level-minimal-requirement":"senior-high"
+    },
+    {
+      "subject-code":"000-002",
+      "subject":"Basic English I",
+      "level-minimal-requirement":"senior-high"
+    },
+    {
+      "subject-code":"000-003",
+      "subject":"Basic Science-I",
+      "level-minimal-requirement":"senior-high"
+    }
+  ],
+  "teachers": [
+      {
+          "teacher-id":"202100001",
+          "first-name":"john jayson",
+          "middle-name":"bartolay",
+          "last-name":"de leon",
+          "email":"savjaylade84@gmail.com",
+          "contact-no":"12345678",
+          "address": "35 blk 5 purok uno bayanan,muntilupa city",
+          "country": "philippines"
+      },
+      {
+        "teacher-id": "202100002",
+        "first-name":"john jayson",
+        "middle-name":"bartolay",
+        "last-name":"de leon",
+        "email":"savjaylade84@gmail.com",
+        "contact-no":"12345678",
+        "address": "35 blk 5 purok uno bayanan,muntilupa city",
+        "country": "philippines"
+      },
+      {
+        "teacher-id": "202100003",
+        "first-name":"john jayson",
+        "middle-name":"bartolay",
+        "last-name":"de leon",
+        "email":"savjaylade84@gmail.com",
+        "contact-no":"12345678",
+        "address": "35 blk 5 purok uno bayanan,muntilupa city",
+        "country": "philippines"
+      }
+    ]
 }

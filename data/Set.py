@@ -16,12 +16,19 @@ class set:
         self._logger:module_log = module_log(log_name = 'set.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
+        self._level:str
         self._title:str = None
         self._set:list[test] = list()
-        self._date:str
+        self._start_date:str
+        self._end_date:str
         self._total_score:int
-        self._title,self._date,self._set,self._total_score = args
-        self._data:dict = {'title':self._title,'date':self._date, 'set':self._set, 'total-score':self._total_score}
+        self._level,self._title,self._start_date,self._end_date,self._set,self._total_score = args
+        self._data:dict = {'level':self._level,'title':self._title,'start-date':self._start_date,'end-date':self._end_date, 'set':self._set, 'total-score':self._total_score}
+
+    @property
+    def level(self) -> str:
+        self._logger.log.info(f'property.getter - level -> {self._level}')
+        return self._level
 
     @property
     def title(self) -> str:
@@ -34,9 +41,14 @@ class set:
         return self._set
 
     @property
-    def date(self) -> str:
-        self._logger.log.info(f'property.getter - date -> {self._date}')
-        return self._date
+    def start_date(self) -> str:
+        self._logger.log.info(f'property.getter - start_date -> {self._start_date}')
+        return self._start_date
+
+    @property
+    def end_date(self) -> str:
+        self._logger.log.info(f'property.getter - end_date -> {self._end_date}')
+        return self._end_date
 
     @property
     def total_score(self) -> int:
@@ -51,13 +63,13 @@ class set:
     @data.setter
     def data(self,value:dict) -> None:
         if is_none(value): raise NoneError(f'Set.py : property.setter - data')
-        self._title,self._date,self._set,self._total_score = value
+        self._level,self._title,self._start_date,self._end_date,self._set,self._total_score = value
         self._data = value
 
     def __rpr__(self):
-        return f'set[{self._data}]'
+        return f'set[ {self._data} ]'
 
     def __str__(self):
-        return f'set[{self._data}]'
+        return f'set[ {self._data} ]'
 
        

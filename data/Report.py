@@ -11,13 +11,19 @@ class report:
         self._logger:module_log = module_log(log_name = 'report.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
+        self._student_id:str
         self._title:str
         self._note:str
         self._date:str
         self._complainer:str
         self.status:str
-        self._title:str, self._note:str, self._date:str, self._complainer:str, self.status = args
-        self._data = {'title':self._title,'note':self._note,'date':self._date,'complaint-by':self._complainer,'status':self._status}
+        self._student_id,self._title:str, self._note:str, self._date:str, self._complainer:str, self.status = args
+        self._data = {'student-id':self._student_id,'title':self._title,'note':self._note,'date':self._date,'complaint-by':self._complainer,'status':self._status}
+
+    @property
+    def student_id(self) -> str:
+        self._logger.log.info(f'property.getter - student_id -> {self._student_id}')
+        return self._student_id
 
     @property
     def title(self) -> str:
@@ -52,5 +58,11 @@ class report:
     @data.setter
     def data(self,value: dict) -> None:
         if is_none(value): raise NoneError(f'Report.py : property.setter - data')
-        self._title:str, self._note:str, self._date:str, self._complainer:str, self.status = value
+        self._student_id,self._title:str, self._note:str, self._date:str, self._complainer:str, self.status = value
         self._data = value
+
+    def __rpr__(self):
+        return f'report[ {self._data} ]'
+
+    def __str__(self):
+         return f'report[ {self._data} ]'
