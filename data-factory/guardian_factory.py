@@ -1,6 +1,6 @@
-import Error
-from Guardian import guardian
-from Tools import is_none
+from data.Guardian import guardian
+from utils.Tools import is_none
+from utils.Error import NoneError
 
 class guardian_factory:
     
@@ -27,7 +27,7 @@ class guardian_factory:
                 return guardian
         return None
 
-    def update_guardina(self,value: guardian,name: str,role: str) -> None:
+    def update_guardin(self,value: guardian,name: str,role: str) -> None:
         if is_none(value,name,role): raise NoneError(f'guardian_factory.py : function update_teacher')
         for guardian in self._guardians:
             if(guardian.name == name and guardian.role == role):

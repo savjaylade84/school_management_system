@@ -12,7 +12,7 @@ from utils.Error import NoneError
 @dataclass
 class teacher:
 
-    def __init__(self,*args):
+     def __init__(self,*args):
         # create the log 
         self._logger:module_log = module_log(log_name = 'teacher.log',disable_log = False)
         # log the creation

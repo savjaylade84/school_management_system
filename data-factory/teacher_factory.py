@@ -1,6 +1,6 @@
-import Error
-from Teacher import teacher
-from Tools import is_none
+from data.Teacher import teacher
+from utils.Tools import is_none
+from utils.Error import NoneError
 
 
 class teacher_factory:

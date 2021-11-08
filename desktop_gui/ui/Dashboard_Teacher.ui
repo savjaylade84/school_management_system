@@ -39,7 +39,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normalon>../images/icon/Person.svg</normalon>
+    <normalon>../images/logo/SVG/author_logo.svg</normalon>
    </iconset>
   </property>
   <property name="accessibleName">
@@ -126,7 +126,7 @@ padding:10px;
 margin:10px auto;</string>
        </property>
        <property name="text">
-        <string>Admin</string>
+        <string>Teacher</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -140,6 +140,49 @@ margin:10px auto;</string>
        <property name="indent">
         <number>0</number>
        </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="dsh_database_menu_button">
+       <property name="minimumSize">
+        <size>
+         <width>229</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI Semilight</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:whitesmoke;
+padding:10px auto;
+margin:10px;
+text-align:left;
+letter-spacing:1px</string>
+       </property>
+       <property name="text">
+        <string>  Profile</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normalon>../images/icon/SVG/person.svg</normalon>
+        </iconset>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">menu_button</string>
+       </attribute>
       </widget>
      </item>
      <item>
@@ -174,7 +217,7 @@ letter-spacing:1px</string>
        </property>
        <property name="icon">
         <iconset>
-         <normalon>../images/icon/Person.svg</normalon>
+         <normalon>../images/icon/SVG/person.svg</normalon>
         </iconset>
        </property>
        <property name="flat">
@@ -213,7 +256,7 @@ text-align:left;
 letter-spacing:1px</string>
        </property>
        <property name="text">
-        <string>  Teacher</string>
+        <string>  Subject</string>
        </property>
        <property name="icon">
         <iconset>
@@ -256,7 +299,7 @@ text-align:left;
 letter-spacing:1px</string>
        </property>
        <property name="text">
-        <string>  Account</string>
+        <string>  Class</string>
        </property>
        <property name="icon">
         <iconset>
@@ -269,89 +312,6 @@ letter-spacing:1px</string>
        <attribute name="buttonGroup">
         <string notr="true">menu_button</string>
        </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="dsh_database_menu_button">
-       <property name="minimumSize">
-        <size>
-         <width>229</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI Semilight</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:whitesmoke;
-padding:10px auto;
-margin:10px;
-text-align:left;
-letter-spacing:1px</string>
-       </property>
-       <property name="text">
-        <string>  Database</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normalon>../images/icon/Person.svg</normalon>
-        </iconset>
-       </property>
-       <property name="flat">
-        <bool>true</bool>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">menu_button</string>
-       </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="dsh_logs_menu_button_2">
-       <property name="minimumSize">
-        <size>
-         <width>229</width>
-         <height>60</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Segoe UI Semilight</family>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="mouseTracking">
-        <bool>true</bool>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color:whitesmoke;
-padding:10px auto;
-margin:10px;
-text-align:left;
-letter-spacing:1px</string>
-       </property>
-       <property name="text">
-        <string>  Logs</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normalon>../images/icon/Person.svg</normalon>
-        </iconset>
-       </property>
-       <property name="flat">
-        <bool>true</bool>
-       </property>
       </widget>
      </item>
      <item>
@@ -402,9 +362,8 @@ letter-spacing:1px</string>
     <zorder>dsh_student_menu_button</zorder>
     <zorder>dsh_settings_menu_button</zorder>
     <zorder>dsh_teacher_menu_button</zorder>
-    <zorder>dsh_database_menu_button</zorder>
-    <zorder>dsh_logs_menu_button_2</zorder>
     <zorder>dsh_account_menu_button_4</zorder>
+    <zorder>dsh_database_menu_button</zorder>
    </widget>
   </widget>
  </widget>

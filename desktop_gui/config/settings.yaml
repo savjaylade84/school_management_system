@@ -1,0 +1,32 @@
+application-name: 'student & teacher management system'
+version: 1.0
+
+gui-path-file:
+      splash: 'desktop_gui/ui/Splash.ui'
+      dashboard: 'desktop_gui/ui/Dashboard.ui'
+      dashboard-admin: 'desktop_gui/ui/Dashboard_Admin.ui'
+      dashboard-Student: 'desktop_gui/ui/Dashboard_student.ui'
+      dashboard-Teacher: 'desktop_gui/ui/Dashboard_Teacher.ui'
+      student-edit: 'desktop_gui/ui/Student_Edit.ui'
+      student-search: 'desktop_gui/ui/Student_Search.ui'
+      teacher-edit: 'desktop_gui/ui/Teacher_Edit.ui'
+      teacher-search: 'desktop_gui/ui/Teacher_Search.ui'
+
+
+appearance:
+  font-family: 'Segoe UI Semilight'
+  font-size: '10'
+  theme:
+        dark-mode:
+              main-color: 'rgb(33, 33, 33)'
+              table-color: 'rgb(63,63,63)'
+              frame-color: 'rgb(53, 53, 53)'
+              mdi-color: 'rgb(68, 68, 68)'
+              font-color: 'white'
+        light-mode:
+              main-color: 'rgb(210, 210, 210)'
+              table-color: 'rgb(170,170,170)'
+              frame-color: 'rgb(190, 190, 190)'
+              font-color: 'black'
+
+  

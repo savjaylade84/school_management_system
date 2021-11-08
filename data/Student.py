@@ -6,6 +6,7 @@ from data.Guardian import guardian
 from data.Test import test
 from data.Grade import grade
 from data.Set import set
+from dataclasses import dataclass
 
 ''' 
         this module has student class that will contain
@@ -13,11 +14,12 @@ from data.Set import set
         student information.
 '''
 
+@dataclass
 class student:
 
     def __init__(self,*args):
         # create the log 
-        self._logger:module_log = module_log(log_name = 'set.log',disable_log = False)
+        self._logger:module_log = module_log(log_name = 'student.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
 
@@ -124,7 +126,7 @@ class student:
 
     @data.setter
     def data(self,value:dict) -> None:
-        if is_none(value): raise NoneError(f'Set.py : property.setter - data')
+        if is_none(value): raise NoneError(f'Student.py : property.setter - data')
         self._level,self._title,self._start_date,self._end_date,self._set,self._total_score = value
         self._data = value
 

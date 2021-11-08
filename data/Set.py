@@ -2,6 +2,7 @@ from utils.Error import NoneError
 from logs.log import module_log
 from dataclasses import dataclass
 from utils.Tools import is_none
+from dataclasses import dataclass
 
 ''' 
         this module has test class that will contain
@@ -9,6 +10,7 @@ from utils.Tools import is_none
         student information.
 '''
 
+@dataclass
 class set:
 
     def __init__(self,*args):
