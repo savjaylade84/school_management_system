@@ -17,27 +17,22 @@ class subject:
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
 
-        self._subject_code:str
-        self._subject:str
+        self._code:str
+        self._name:str
         self._minimal_req:str
         
-        self._subject_code,self._subject,self._minimal_req = args
-        self._data:dict = {'subject-code':self._subject_code,'subject':self._subject,'level-minimal-requirement':self._minimal_req}
+        self._code,self._name = args
+        self._data:dict = {'code':self._code,'name':self._name}
 
     @property
-    def subject_code(self) -> str:
-        self._logger.log.info(f'property.getter - subject_code -> {self._subject_code}')
-        return self._subject_code
+    def code(self) -> str:
+        self._logger.log.info(f'property.getter - code -> {self._code}')
+        return self._code
 
     @property
-    def subject(self) -> str:
-        self._logger.log.info(f'property.getter - subject -> {self._subject}')
-        return self._subject   
-
-    @property
-    def minimal_req(self) -> str:
-        self._logger.log.info(f'property.getter - minimal_req -> {self._minimal_req}')
-        return self._minimal_req     
+    def name(self) -> str:
+        self._logger.log.info(f'property.getter - name -> {self._name}')
+        return self._name   
 
     @property
     def data(self) -> dict:
@@ -47,5 +42,5 @@ class subject:
     @data.setter
     def data(self,value:dict) -> None:
         if is_none(value): raise NoneError(f'Student.py : property.setter - data')
-        self._subject_code,self._subject,self._minimal_req = value
+        self._code,self._name = value
         self._data = value

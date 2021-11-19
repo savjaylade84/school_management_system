@@ -17,6 +17,12 @@ handlers:
       level: DEBUG
       filename: ./logs/common/common.log
       formatter: detail
+      mode: a
+    exam.file:
+      class: logging.FileHandler
+      level: DEBUG
+      filename: ./logs/exam/exam.log
+      formatter: data
       mode: a  
     student.file:
       class: logging.FileHandler
@@ -145,6 +151,10 @@ loggers:
   student.manager.log:
     level: DEBUG
     handlers: [console,student.manager.file]
+    propagate: no
+  exam.log:
+    level: DEBUG
+    handlers: [exam.file]
     propagate: no
   database.log:
     level: DEBUG

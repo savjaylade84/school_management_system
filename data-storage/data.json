@@ -1,8 +1,7 @@
 {
-
   "students": [
     {
-      "student-id": "202100001",
+      "id": "202100001",
       "first-name": "john jayson",
       "middle-name": "bartolay",
       "last-name": "de leon",
@@ -22,7 +21,7 @@
       "exams": [
         {
           "level":"senior-high",
-          "first-quarter": [
+          "sets": [
             {
               "title": "prelim",
               "start-date": "01/01/01",
@@ -38,30 +37,35 @@
         }
       ],
       "grades":[
-          {
-            "subject-code":"000-001",
-            "teacher-id":"202100001",
-            "date":"01/01/01",
-            "grade":70
-          },
-          {
-            "subject-code":"000-002",
-            "teacher-id":"202100002",
-            "date":"01/01/01",
-            "grade":80
-          },
-          {
-            "subject-code":"000-002",
-            "teacher-id":"202100003",
-            "date":"01/01/01",
-            "grade":90
-          }
+        {
+          "level":"senior-high",
+          "start-date":"01/01/01",
+          "end-date":"01/01/01",
+          "subject":[
+            {
+              "subject-code":"000-001",
+              "teacher-id":"202100001",
+              "grade":70
+            },
+            {
+              "subject-code":"000-002",
+              "teacher-id":"202100002",
+              "grade":80
+            },
+            {
+              "subject-code":"000-002",
+              "teacher-id":"202100003",
+              "grade":90
+            }
+          ]
+        }
       ]
     }
   ],
   "reports":[
     {
-      "student-id":"202100001",
+      "id":"202100001",
+      "type": "student",
       "title": "making joke",
       "note": "make punish",
       "date": "01/01/01",
@@ -69,26 +73,23 @@
       "status": "case-closed"
     }
   ],
-  "subjects":[
+  "subject":[
     {
-      "subject-code":"000-001",
-      "subject":"Basic Math I",
-      "level-minimal-requirement":"senior-high"
+      "code":"000-001",
+      "name":"Basic Math I"
     },
     {
-      "subject-code":"000-002",
-      "subject":"Basic English I",
-      "level-minimal-requirement":"senior-high"
+      "code":"000-002",
+      "name":"Basic English I"
     },
     {
-      "subject-code":"000-003",
-      "subject":"Basic Science-I",
-      "level-minimal-requirement":"senior-high"
+      "code":"000-003",
+      "name":"Basic Science-I"
     }
   ],
   "teachers": [
       {
-          "teacher-id":"202100001",
+          "id":"202100001",
           "first-name":"john jayson",
           "middle-name":"bartolay",
           "last-name":"de leon",
@@ -98,7 +99,7 @@
           "country": "philippines"
       },
       {
-        "teacher-id": "202100002",
+        "id": "202100002",
         "first-name":"john jayson",
         "middle-name":"bartolay",
         "last-name":"de leon",
@@ -108,7 +109,7 @@
         "country": "philippines"
       },
       {
-        "teacher-id": "202100003",
+        "id": "202100003",
         "first-name":"john jayson",
         "middle-name":"bartolay",
         "last-name":"de leon",

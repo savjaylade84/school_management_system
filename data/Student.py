@@ -5,7 +5,7 @@ from utils.Tools import is_none
 from data.Guardian import guardian
 from data.Test import test
 from data.Grade import grade
-from data.Set import set
+from data.exam import exam
 from dataclasses import dataclass
 
 ''' 
@@ -35,7 +35,7 @@ class student:
         self._enrolled:bool
         self._guardians:list[guardian]
         self._grades:list[grade]
-        self._exams:list[set]
+        self._exams:list[exam]
 
         self._id,self._firt_name,self._middle_name,self._last_name,self._email,self._contact,self._address,self.country,self._current_level,self._enrolled,self._guardians,self._exams,self._grades = args
 
