@@ -41,7 +41,7 @@
           "level":"senior-high",
           "start-date":"01/01/01",
           "end-date":"01/01/01",
-          "subject":[
+          "subjects":[
             {
               "subject-code":"000-001",
               "teacher-id":"202100001",
@@ -73,7 +73,7 @@
       "status": "case-closed"
     }
   ],
-  "subject":[
+  "course":[
     {
       "code":"000-001",
       "name":"Basic Math I"

@@ -3,9 +3,9 @@ from utils.Tools import is_none
 from dataclasses import dataclass
 
 ''' 
-        this module has student class that will contain
+        this module has course class that will contain
         all the student information that related to the 
-        student information.
+        course information.
 
         take note course is different in subject data
         course is just master list of all courses available 
@@ -13,20 +13,19 @@ from dataclasses import dataclass
 '''
 
 @dataclass
-class student:
+class course:
     
     def __init__(self,*args):
         # create the log 
-        self._logger:module_log = module_log(log_teacher_id = 'subject.log',disable_log = False)
+        self._logger:module_log = module_log(log_name = 'course.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
 
         self._code:str
-        self._teacher_id:str
-        self._grade:double
+        self._name:str
         
-        self._code,self._teacher_id,self._grade = args
-        self._data:dict = {'code':self._code,'teacher-id':self._teacher_id,'grade':self._grade}
+        self._code,self._name = args
+        self._data:dict = {'code':self._code,'name':self._name}
 
     @property
     def code(self) -> str:
@@ -34,14 +33,9 @@ class student:
         return self._code
 
     @property
-    def teacher_id(self) -> str:
-        self._logger.log.info(f'property.getter - teacher_id -> {self._teacher_id}')
-        return self._teacher_id   
-
-    @property
-    def grade(self) -> double:
-        self._logger.log.info(f'property.getter - grade -> {self._grade}')
-        return self._grade   
+    def name(self) -> str:
+        self._logger.log.info(f'property.getter - name -> {self._name}')
+        return self._name   
 
     @property
     def data(self) -> dict:
@@ -50,13 +44,13 @@ class student:
 
     @data.setter
     def data(self,value:dict) -> None:
-        if is_none(value): raise NoneError(f'Subject.py : property.setter - data')
-        self._code,self._teacher_id = value
+        if is_none(value): raise NoneError(f'Course.py : property.setter - data')
+        self._code,self._name = value
         self._data = value
 
-
+    
     def __rpr__(self):
-        return f'subject[ {self._data} ]'
+        return f'course[ {self._data} ]'
 
     def __str__(self):
-         return f'subject[ {self._data} ]'
+         return f'course[ {self._data} ]'

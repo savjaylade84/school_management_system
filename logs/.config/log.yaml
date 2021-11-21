@@ -106,7 +106,19 @@ handlers:
       level: DEBUG
       filename: ./logs/grade/grade.log
       formatter: data
-      mode: a  
+      mode: a
+    subject.file:
+      class: logging.FileHandler
+      level: DEBUG
+      filename: ./logs/subject/subject.log
+      formatter: data
+      mode: a
+    course.file:
+      class: logging.FileHandler
+      level: DEBUG
+      filename: ./logs/course/course.log
+      formatter: data
+      mode: a      
 loggers:
   student.log:
     level: DEBUG
@@ -155,6 +167,14 @@ loggers:
   exam.log:
     level: DEBUG
     handlers: [exam.file]
+    propagate: no
+  subject.log:
+    level: DEBUG
+    handlers: [subject.file]
+    propagate: no
+  course.log:
+    level: DEBUG
+    handlers: [course.file]
     propagate: no
   database.log:
     level: DEBUG

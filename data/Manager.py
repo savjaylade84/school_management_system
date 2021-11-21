@@ -7,6 +7,7 @@ from data.Grade import grade
 from data.Exam import exam
 from data.Set import set
 from data.Test import test
+from data.Course import course
 
 class teacher_manager:
     def __init__(self,teacher_list:list[teacher]):
@@ -26,26 +27,26 @@ class teacher_manager:
                 return True
         return False
 
-class subject_manager:
-    def __init__(self,subject_list: list[subject])
-        self._subject_list:list[subject] = subject_list
+class course_manager:
+    def __init__(self,course_list: list[course])
+        self._course_list:list[course] = course_list
 
-    def add(self,new_data:subject):
-        self._subject_list.append(new_data)
+    def add(self,new_data:course):
+        self._course_list.append(new_data)
 
     def remove(self,code:str):
-        for subject in self._subject_list:
-            if(subject.code == code):
-                self._subject_list.remove(subject)
+        for course in self._course_list:
+            if(course.code == code):
+                self._course_list.remove(course)
 
-    def update(self,code:str,new_data:subject):
-        for subject in self._subject_list:
-            if(subject.code == code):
-                subject == new_data
+    def update(self,code:str,new_data:course):
+        for course in self._course_list:
+            if(course.code == code):
+                course == new_data
 
     def find(self,code:str):
-        for subject in self._subject_list:
-            if(subject.code == code):
+        for course in self._course_list:
+            if(course.code == code):
                 return True
         return False
 
@@ -86,11 +87,21 @@ class student_manager:
             if(student.id == id):
                 student.guardians.append(new_data)
 
+    # adding some area in the grades and subject
     def add_grades(self,id:str,new_data:grade):
         for student in self._student_list:
             if(student.id == id):
                 student.grades.append(new_data)
 
+    def add_subject(self,id:str,level:str,new_data_subject):
+        for student in self._student_list:
+            if(student.id == id):
+                for grade in self.student_list.grades:
+                    if(grade.level == level):
+                        grade.subjects.append(new_data)
+
+
+    # adding some area in the test and exams
     def add_exams(self,id:str,new_data:exam):
         for student in self._student_list:
             if(student.id == id):

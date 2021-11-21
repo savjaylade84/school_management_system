@@ -9,7 +9,7 @@ class exam:
 
     def __init__(self,*args):
         # create the log 
-        self._logger:module_log = module_log(log_name = 'set.log',disable_log = False)
+        self._logger:module_log = module_log(log_name = 'exam.log',disable_log = False)
         # log the creation
         self._logger.log.debug(f'__init__ <- {args}')
         self._level:str
@@ -29,7 +29,7 @@ class exam:
 
     @data.setter
     def data(self,value:dict) -> None:
-        if is_none(value): raise NoneError(f'Set.py : property.setter - data')
+        if is_none(value): raise NoneError(f'exam.py : property.setter - data')
         self._level,self._sets = value
         self._data = value
 
