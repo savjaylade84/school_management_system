@@ -12,16 +12,26 @@ from Tools import is_none
 @dataclass
 class test:
 
+    ##################################[initialising]#####################################################
     def __init__(self,*args):
+
+        if is_none(args): raise NoneError(f'Exam.py : function - __init__')
+
         # create the log 
         self._logger:module_log = module_log(log_name = 'test.log',disable_log = False)
         # log the creation
+
+        #initialize
         self._logger.log.debug(f'__init__ <- {args}')
         self._subject_code:str
         self._subject:str
         self._score:str
+
+        #declaration
         self._subject, self._score = args
         self._data:dict = {'subject-code':self._subject_code,'subject':self._subject, 'score':self._score}
+
+    ##################################[test properties]#####################################################
 
     @property
     def subject_code(self) -> str:
@@ -37,6 +47,8 @@ class test:
     def score(self) -> int:
         self._logger.log.info(f'property.getter - score -> {self._score}')
         return self._score
+
+    ##################################[test information]#####################################################
 
     @property
     def data(self) -> dict:

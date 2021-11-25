@@ -1,0 +1,34 @@
+{
+      "teachers": [
+      {
+          "id":"202100001",
+          "first-name":"john jayson",
+          "middle-name":"bartolay",
+          "last-name":"de leon",
+          "email":"savjaylade84@gmail.com",
+          "contact-no":"12345678",
+          "address": "35 blk 5 purok uno bayanan,muntilupa city",
+          "country": "philippines"
+      },
+      {
+        "id": "202100002",
+        "first-name":"john jayson",
+        "middle-name":"bartolay",
+        "last-name":"de leon",
+        "email":"savjaylade84@gmail.com",
+        "contact-no":"12345678",
+        "address": "35 blk 5 purok uno bayanan,muntilupa city",
+        "country": "philippines"
+      },
+      {
+        "id": "202100003",
+        "first-name":"john jayson",
+        "middle-name":"bartolay",
+        "last-name":"de leon",
+        "email":"savjaylade84@gmail.com",
+        "contact-no":"12345678",
+        "address": "35 blk 5 purok uno bayanan,muntilupa city",
+        "country": "philippines"
+      }
+    ]
+}

@@ -1,3 +1,29 @@
-hostname: 'localhost'
-username: 'savjaylade84'
-password: 'deleon0927'
+database:
+  type: 'mongo' 
+  hostname: 'localhost'
+  username: 'savjaylade84'
+  password: 'deleon0927'
+
+database:
+  type: 'json'
+  name: 'student'
+  file-path: 'data-storage\student.json'
+  data-path: 'students'
+ 
+database:
+  type: 'json'
+  name: 'teacher'
+  file-path: 'data-storage\teacher.json'
+  data-path: 'teachers'
+
+database:
+  type: 'json'
+  name: 'course'
+  file-path: 'data-storage\course.json'
+  data-path: 'courses'
+
+database:
+  type: 'json'
+  name: 'report'
+  file-path: 'data-storage\report.json'
+  data-path: 'report'

@@ -6,69 +6,81 @@ from utils.Tools import is_none
 @dataclass
 class report:
 
+    ##################################[initialising]#####################################################
     def __init__(self,*args):
+
+        if is_none(args): raise NoneError(f'Report.py : function - __init__')
+
         # create the log 
-        self._logger:module_log = module_log(log_name = 'report.log',disable_log = False)
+        self.__logger:module_log = module_log(log_name = 'report.log',disable_log = False)
         # log the creation
-        self._logger.log.debug(f'__init__ <- {args}')
-        self._id:str
-        self._type:str
-        self._title:str
-        self._note:str
-        self._date:str
-        self._complainer:str
-        self._status:str
-        self._id,self._type,self._title:str, self._note:str, self._date:str, self._complainer:str, self._status = args
-        self._data = {'student-id':self._id,'type':self._type,'title':self._title,'note':self._note,'date':self._date,'complaint-by':self._complainer,'status':self._status}
+        self.__logger.log.debug(f'__init__ <- {args}')
+
+        #initialize
+        self.__id:str
+        self.__type:str
+        self.__title:str
+        self.__note:str
+        self.__date:str
+        self.__complainer:str
+        self.__status:str
+
+        #declaration
+        self.__id,self.__type,self.__title:str, self.__note:str, self.__date:str, self.__complainer:str, self.__status = args
+        self.__data = {'student-id':self.__id,'type':self.__type,'title':self.__title,'note':self.__note,'date':self.__date,'complaint-by':self.__complainer,'status':self.__status}
+
+    ##################################[report properties]#####################################################
 
     @property
     def id(self) -> str:
-        self._logger.log.info(f'property.getter - id -> {self._id}')
-        return self._id
+        self.__logger.log.info(f'property.getter - id -> {self.__id}')
+        return self.__id
 
     @property
     def type(self) -> str:
-        self._logger.log.info(f'property.getter - type -> {self._type}')
-        return self._type
+        self.__logger.log.info(f'property.getter - type -> {self.__type}')
+        return self.__type
 
     @property
     def title(self) -> str:
-        self._logger.log.info(f'property.getter - title -> {self._title}')
-        return self._title
+        self.__logger.log.info(f'property.getter - title -> {self.__title}')
+        return self.__title
 
     @property
     def note(self) -> str:
-        self._logger.log.info(f'property.getter - note -> {self._note}')
-        return self._note
+        self.__logger.log.info(f'property.getter - note -> {self.__note}')
+        return self.__note
 
     @property
     def date(self) -> str:
-        self._logger.log.info(f'property.getter - title -> {self._date}')
-        return self._date
+        self.__logger.log.info(f'property.getter - title -> {self.__date}')
+        return self.__date
 
     @property
     def complainer(self) -> str:
-        self._logger.log.info(f'property.getter - complainer -> {self._complainer}')
-        return self._complainer
+        self.__logger.log.info(f'property.getter - complainer -> {self.__complainer}')
+        return self.__complainer
 
     @property
     def status(self) -> str:
-        self._logger.log.info(f'property.getter - status -> {self._status}')
-        return self._status
+        self.__logger.log.info(f'property.getter - status -> {self.__status}')
+        return self.__status
+
+    ##################################[report information]#####################################################
 
     @property
     def data(self) -> str:
-        self._logger.log.info(f'property.getter - data -> {self._data}')
-        return self._data
+        self.__logger.log.info(f'property.getter - data -> {self.__data}')
+        return self.__data
 
     @data.setter
     def data(self,value: dict) -> None:
         if is_none(value): raise NoneError(f'Report.py : property.setter - data')
-        self._id,self._type,self._title:str, self._note:str, self._date:str, self._complainer:str, self._status = value
-        self._data = value
+        self.__id,self.__type,self.__title:str, self.__note:str, self.__date:str, self.__complainer:str, self.__status = value
+        self.__data = value
 
     def __rpr__(self):
-        return f'report[ {self._data} ]'
+        return f'report[ {self.__data} ]'
 
     def __str__(self):
-         return f'report[ {self._data} ]'
+         return f'report[ {self.__data} ]'

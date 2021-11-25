@@ -26,13 +26,13 @@ class module_log:
             directory
         '''
         with open('./logs/.config/log.yaml','r') as file:
-            self._yaml = yaml.load(file,Loader=yaml.FullLoader)     # convert the yaml object to json object
-        logging.config.dictConfig(self._yaml)                       # load the json object that has log config
-        self._logger = logging.getLogger(log_name)                  # get the logger name in the log config
-        self._disable_log = disable_log                             # this will diable the entire logs in the module
+            self.__yaml = yaml.load(file,Loader=yaml.FullLoader)     # convert the yaml object to json object
+        logging.config.dictConfig(self.__yaml)                       # load the json object that has log config
+        self.__logger = logging.getLogger(log_name)                  # get the logger name in the log config
+        self.__disable_log = disable_log                             # this will diable the entire logs in the module
 
     @property
     def log(self):
-        if self._disable_log: raise NoneError(f'log.py : property.getter - data')
-        return self._logger
+        if self.__disable_log: raise NoneError(f'log.py : property.getter - data')
+        return self.__logger
 

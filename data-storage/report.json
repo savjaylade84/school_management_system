@@ -1,0 +1,13 @@
+{
+    "reports":[
+        {
+        "id":"202100001",
+        "type": "student",
+        "title": "making joke",
+        "note": "make punish",
+        "date": "01/01/01",
+        "complaint-by": "rose",
+        "status": "case-closed"
+        }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+    "courses":[
+        {
+        "code":"000-001",
+        "name":"Basic Math I"
+        },
+        {
+        "code":"000-002",
+        "name":"Basic English I"
+        },
+        {
+        "code":"000-003",
+        "name":"Basic Science-I"
+        }
+  ]
+}

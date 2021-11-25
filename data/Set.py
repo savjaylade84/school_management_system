@@ -13,59 +13,71 @@ from data.Test import test
 @dataclass
 class set:
 
+    ##################################[initialising]#####################################################
     def __init__(self,*args):
+
+        if is_none(args): raise NoneError(f'Set.py : function - __init__')
+
         # create the log 
-        self._logger:module_log = module_log(log_name = 'set.log',disable_log = False)
+        self.__logger:module_log = module_log(log_name = 'set.log',disable_log = False)
         # log the creation
-        self._logger.log.debug(f'__init__ <- {args}')
-        self._title:str = None
-        self._set:list[test] = list()
-        self._start_date:str
-        self._end_date:str
-        self._total_score:int
-        self._title,self._start_date,self._end_date,self._set,self._total_score = args
-        self._data:dict = {'title':self._title,'start-date':self._start_date,'end-date':self._end_date, 'sets':self._set, 'total-score':self._total_score}
+        self.__logger.log.debug(f'__init__ <- {args}')
+
+        #initialize
+        self.__title:str = None
+        self.__tests:list[test] = list()
+        self.__start_date:str
+        self.__end_date:str
+        self.__total_score:int
+
+        #declaration
+        self.__title,self.__start_date,self.__end_date,self.__tests,self.__total_score = args
+        self.__data:dict = {'title':self.__title,'start-date':self.__start_date,'end-date':self.__end_date, 'tests':self.__tests, 'total-score':self.__total_score}
+
+    ##################################[set properties]#####################################################
 
     @property
     def title(self) -> str:
-        self._logger.log.info(f'property.getter - title -> {self._title}')
-        return self._title
+        self.__logger.log.info(f'property.getter - title -> {self.__title}')
+        return self.__title
 
     @property
-    def set(self) -> list:
-        self._logger.log.info(f'property.getter - set -> {self._set}')
-        return self._set
+    def tests(self) -> list:
+        self.__logger.log.info(f'property.getter - tests -> {self.__tests}')
+        return self.__tests
 
     @property
     def start_date(self) -> str:
-        self._logger.log.info(f'property.getter - start_date -> {self._start_date}')
-        return self._start_date
+        self.__logger.log.info(f'property.getter - start_date -> {self.__start_date}')
+        return self.__start_date
 
     @property
     def end_date(self) -> str:
-        self._logger.log.info(f'property.getter - end_date -> {self._end_date}')
-        return self._end_date
+        self.__logger.log.info(f'property.getter - end_date -> {self.__end_date}')
+        return self.__end_date
 
     @property
     def total_score(self) -> int:
-        self._logger.log.info(f'property.getter - total_score -> {self._total_score}')
-        return self._total_score
+        self.__logger.log.info(f'property.getter - total_score -> {self.__total_score}')
+        return self.__total_score
+
+    ##################################[set information]#####################################################
 
     @property
     def data(self) -> dict:
-        self._logger.log.info(f'property.getter - full_data -> {self._data}')
-        return self._data
+        self.__logger.log.info(f'property.getter - full_data -> {self.__data}')
+        return self.__data
 
     @data.setter
     def data(self,value:dict) -> None:
         if is_none(value): raise NoneError(f'Set.py : property.setter - data')
-        self._title,self._start_date,self._end_date,self._set,self._total_score = value
-        self._data = value
+        self.__title,self.__start_date,self.__end_date,self.__tests,self.__total_score = value
+        self.__data = value
 
     def __rpr__(self):
-        return f'set[ {self._data} ]'
+        return f'set[ {self.__data} ]'
 
     def __str__(self):
-        return f'set[ {self._data} ]'
+        return f'set[ {self.__data} ]'
 
        

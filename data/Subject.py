@@ -15,48 +15,58 @@ from dataclasses import dataclass
 @dataclass
 class student:
     
+    ##################################[initialising]#####################################################
     def __init__(self,*args):
-        # create the log 
-        self._logger:module_log = module_log(log_teacher_id = 'subject.log',disable_log = False)
-        # log the creation
-        self._logger.log.debug(f'__init__ <- {args}')
 
-        self._code:str
-        self._teacher_id:str
-        self._grade:double
+        if is_none(args): raise NoneError(f'Subject.py : function - __init__')
+
+        # create the log 
+        self.__logger:module_log = module_log(log_teacher_id = 'subject.log',disable_log = False)
+        # log the creation
+        self.__logger.log.debug(f'__init__ <- {args}')
+
+        #initialize
+        self.__code:str
+        self.__teacher_id:str
+        self.__grade:double
         
-        self._code,self._teacher_id,self._grade = args
-        self._data:dict = {'code':self._code,'teacher-id':self._teacher_id,'grade':self._grade}
+        #declaration
+        self.__code,self.__teacher_id,self.__grade = args
+        self.__data:dict = {'code':self.__code,'teacher-id':self.__teacher_id,'grade':self.__grade}
+
+    ##################################[subject properties]#####################################################
 
     @property
     def code(self) -> str:
-        self._logger.log.info(f'property.getter - code -> {self._code}')
-        return self._code
+        self.__logger.log.info(f'property.getter - code -> {self.__code}')
+        return self.__code
 
     @property
     def teacher_id(self) -> str:
-        self._logger.log.info(f'property.getter - teacher_id -> {self._teacher_id}')
-        return self._teacher_id   
+        self.__logger.log.info(f'property.getter - teacher_id -> {self.__teacher_id}')
+        return self.__teacher_id   
 
     @property
     def grade(self) -> double:
-        self._logger.log.info(f'property.getter - grade -> {self._grade}')
-        return self._grade   
+        self.__logger.log.info(f'property.getter - grade -> {self.__grade}')
+        return self.__grade   
+
+    ##################################[subject information]#####################################################
 
     @property
     def data(self) -> dict:
-        self._logger.log.info(f'property.getter - data -> {self._data}')
-        return self._data
+        self.__logger.log.info(f'property.getter - data -> {self.__data}')
+        return self.__data
 
     @data.setter
     def data(self,value:dict) -> None:
         if is_none(value): raise NoneError(f'Subject.py : property.setter - data')
-        self._code,self._teacher_id = value
-        self._data = value
+        self.__code,self.__teacher_id = value
+        self.__data = value
 
 
     def __rpr__(self):
-        return f'subject[ {self._data} ]'
+        return f'subject[ {self.__data} ]'
 
     def __str__(self):
-         return f'subject[ {self._data} ]'
+         return f'subject[ {self.__data} ]'

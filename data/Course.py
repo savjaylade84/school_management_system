@@ -15,42 +15,52 @@ from dataclasses import dataclass
 @dataclass
 class course:
     
+    ##################################[initialising]#####################################################
     def __init__(self,*args):
-        # create the log 
-        self._logger:module_log = module_log(log_name = 'course.log',disable_log = False)
-        # log the creation
-        self._logger.log.debug(f'__init__ <- {args}')
 
-        self._code:str
-        self._name:str
+        if is_none(args): raise NoneError(f'Course.py : function - __init__')
+
+        # create the log 
+        self.__logger:module_log = module_log(log_name = 'course.log',disable_log = False)
+        # log the creation
+        self.__logger.log.debug(f'__init__ <- {args}')
+
+        #initialize
+        self.__code:str
+        self.__name:str
         
-        self._code,self._name = args
-        self._data:dict = {'code':self._code,'name':self._name}
+        #declaration
+        self.__code,self.__name = args
+        self.__data:dict = {'code':self.__code,'name':self.__name}
+
+    ##################################[course properties]#####################################################
 
     @property
     def code(self) -> str:
-        self._logger.log.info(f'property.getter - code -> {self._code}')
-        return self._code
+        self.__logger.log.info(f'property.getter - code -> {self.__code}')
+        return self.__code
 
     @property
     def name(self) -> str:
-        self._logger.log.info(f'property.getter - name -> {self._name}')
-        return self._name   
+        self.__logger.log.info(f'property.getter - name -> {self.__name}')
+        return self.__name   
+
+    ##################################[course information]#####################################################
 
     @property
     def data(self) -> dict:
-        self._logger.log.info(f'property.getter - data -> {self._data}')
-        return self._data
+        self.__logger.log.info(f'property.getter - data -> {self.__data}')
+        return self.__data
 
     @data.setter
     def data(self,value:dict) -> None:
         if is_none(value): raise NoneError(f'Course.py : property.setter - data')
-        self._code,self._name = value
-        self._data = value
+        self.__code,self.__name = value
+        self.__data = value
 
     
     def __rpr__(self):
-        return f'course[ {self._data} ]'
+        return f'course[ {self.__data} ]'
 
     def __str__(self):
-         return f'course[ {self._data} ]'
+         return f'course[ {self.__data} ]'
