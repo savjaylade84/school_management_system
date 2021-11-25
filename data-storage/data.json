@@ -21,7 +21,7 @@
       "exams": [
         {
           "level":"senior-high",
-          "tesdts": [
+          "sets": [
             {
               "title": "prelim",
               "start-date": "01/01/01",
@@ -41,7 +41,7 @@
           "level":"senior-high",
           "start-date":"01/01/01",
           "end-date":"01/01/01",
-          "subjects":[
+          "subject":[
             {
               "subject-code":"000-001",
               "teacher-id":"202100001",
@@ -61,5 +61,62 @@
         }
       ]
     }
-  ]
+  ],
+  "reports":[
+    {
+      "id":"202100001",
+      "type": "student",
+      "title": "making joke",
+      "note": "make punish",
+      "date": "01/01/01",
+      "complaint-by": "rose",
+      "status": "case-closed"
+    }
+  ],
+  "subject":[
+    {
+      "code":"000-001",
+      "name":"Basic Math I"
+    },
+    {
+      "code":"000-002",
+      "name":"Basic English I"
+    },
+    {
+      "code":"000-003",
+      "name":"Basic Science-I"
+    }
+  ],
+  "teachers": [
+      {
+          "id":"202100001",
+          "first-name":"john jayson",
+          "middle-name":"bartolay",
+          "last-name":"de leon",
+          "email":"savjaylade84@gmail.com",
+          "contact-no":"12345678",
+          "address": "35 blk 5 purok uno bayanan,muntilupa city",
+          "country": "philippines"
+      },
+      {
+        "id": "202100002",
+        "first-name":"john jayson",
+        "middle-name":"bartolay",
+        "last-name":"de leon",
+        "email":"savjaylade84@gmail.com",
+        "contact-no":"12345678",
+        "address": "35 blk 5 purok uno bayanan,muntilupa city",
+        "country": "philippines"
+      },
+      {
+        "id": "202100003",
+        "first-name":"john jayson",
+        "middle-name":"bartolay",
+        "last-name":"de leon",
+        "email":"savjaylade84@gmail.com",
+        "contact-no":"12345678",
+        "address": "35 blk 5 purok uno bayanan,muntilupa city",
+        "country": "philippines"
+      }
+    ]
 }
