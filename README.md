@@ -1,4 +1,4 @@
-# School Management System using Python3 (Python QT5 Desktop Gui based)
+# School Management System using Python3 (Python QT5 Desktop Gui based) - (Under Developement)
 #### 
 >### Version: Beta v.0.2
 #### 
